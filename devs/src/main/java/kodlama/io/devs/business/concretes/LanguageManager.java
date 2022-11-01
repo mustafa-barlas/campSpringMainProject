@@ -39,12 +39,12 @@ public class LanguageManager implements LanguageService {
     private  boolean check(String languageName)throws Exception{
         for (Language lng : this.languageRepository.getAll()){
             if (lng.getName().equalsIgnoreCase(languageName)){
-                return true;
+                return false;
 
             }
 
         }
-        return false;
+        return true;
     }
     private boolean languageIsEmpty(Language language){
         if (language.getName().isEmpty()|| language.getName().isBlank()){

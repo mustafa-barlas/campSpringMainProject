@@ -22,18 +22,18 @@ public class LanguagesController  {
     }
     @PostMapping("/add")
     public  void add(Language language) throws Exception {
-        this.languageService.add(language);
+        languageService.add(language);
     }
-    @PostMapping("/delete")
+    @DeleteMapping("/delete")
     public void delete(@RequestParam int id){
-        this.languageService.delete(id);
+        languageService.delete(id);
     }
-    @PostMapping("/update")
+    @PutMapping("/update")
     public void update(Language language){
-        this.languageService.update(language);
+        languageService.update(language);
     }
     @GetMapping ("/getById")
     public Language getById(int id){
-        return this.languageService.getById(id);
+        return languageService.getById(id);
     }
 }
