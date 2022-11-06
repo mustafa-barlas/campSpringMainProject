@@ -1,19 +1,17 @@
 package kodlama.io.devs.entities.concretes;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
-@Table(name = "languages")
-@AllArgsConstructor
+@Table(name = "technologies")
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class Language {
+public class Technology {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +21,7 @@ public class Language {
     @Column(name = "name")
     private String name;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "language",  cascade = CascadeType.ALL)
-    private List<Technology> technologies;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "language_id")
+    private Language language;
 }
