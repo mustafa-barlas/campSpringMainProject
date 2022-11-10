@@ -1,10 +1,8 @@
 package kodlama.io.devs.business.concretes;
 
 import kodlama.io.devs.business.abstracts.TechnologyService;
-import kodlama.io.devs.business.requests.Language.UpdateLanguageRequest;
 import kodlama.io.devs.business.requests.Technology.CreateTechnologyRequest;
 import kodlama.io.devs.business.requests.Technology.UpdateTechnologyRequest;
-import kodlama.io.devs.business.responses.Language.GetAllLanguagesResponse;
 import kodlama.io.devs.business.responses.Technology.GetAllTechnologyResponse;
 import kodlama.io.devs.business.responses.Technology.GetByIdTechnologyResponse;
 import kodlama.io.devs.dataAccess.abstracts.LanguageRepository;

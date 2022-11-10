@@ -6,23 +6,29 @@ import kodlama.io.devs.business.requests.Language.UpdateLanguageRequest;
 import kodlama.io.devs.business.responses.Language.GetAllLanguagesResponse;
 import kodlama.io.devs.business.responses.Language.GetByIdLanguageResponse;
 
+import kodlama.io.devs.business.responses.Technology.GetAllTechnologyResponse;
 import kodlama.io.devs.dataAccess.abstracts.LanguageRepository;
 
 
+import kodlama.io.devs.dataAccess.abstracts.TechnologyRepository;
 import kodlama.io.devs.entities.concretes.Language;
+import kodlama.io.devs.entities.concretes.Technology;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 public class LanguageManager implements LanguageService {
 
     private LanguageRepository languageRepository;
+    private TechnologyRepository technologyRepository;
 
 
-    public LanguageManager(LanguageRepository languageRepository) {
+    public LanguageManager(LanguageRepository languageRepository ,TechnologyRepository technologyRepository) {
         this.languageRepository = languageRepository;
+        this.technologyRepository = technologyRepository;
 
     }
 
@@ -37,10 +43,9 @@ public class LanguageManager implements LanguageService {
 
             responseItem.setId(language.getId());
             responseItem.setName(language.getName());
-
             responseItem.setTechnologies(language.getTechnologies());
-            languagesResponses.add(responseItem);
 
+            languagesResponses.add(responseItem);
 
         }
         return languagesResponses;

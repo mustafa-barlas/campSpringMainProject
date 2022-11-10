@@ -21,7 +21,7 @@ public class Technology {
     @Column(name = "name")
     private String name;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne()
     @JoinColumn(name = "language_id")
     private Language language;
 }
